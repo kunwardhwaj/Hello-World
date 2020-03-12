@@ -6,7 +6,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                def props = readProperties  file: 'inputfile.txt'
+                def props = readProperties  file: '${WORKSPACE}/inputfile.txt'
 
                 script {
                  
