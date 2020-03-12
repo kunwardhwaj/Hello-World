@@ -9,7 +9,7 @@ pipeline {
                 
 
                 script {
-                def props = readProperties  file: '${WORKSPACE}/inputfile.txt' 
+                def props = file: '${WORKSPACE}/inputfile.txt' 
                     for (int i = 0; i < props.size(); ++i) {
                         echo "Testing the ${props[i]} file"
                     }
