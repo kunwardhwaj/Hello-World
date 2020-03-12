@@ -11,7 +11,7 @@ pipeline {
                 script {
               
                     def props = readFile(file: 'inputfile.txt')
-                    repo = splitStringWithComma(props)
+                    repo = props.split(',')
 
                     for (int i = 0; i < repo.size(); ++i) {
                         echo "Testing the ${repo[i]} file"
