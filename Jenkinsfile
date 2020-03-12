@@ -6,11 +6,12 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
+                def props = readProperties  file: 'inputfile.txt'
 
                 script {
-                    def browsers = ['chrome', 'firefox']
-                    for (int i = 0; i < browsers.size(); ++i) {
-                        echo "Testing the ${browsers[i]} browser"
+                 
+                    for (int i = 0; i < props.size(); ++i) {
+                        echo "Testing the ${props[i]} file"
                     }
                 }
             }
